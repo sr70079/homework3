@@ -48,15 +48,15 @@ function generatePassword() {
       passwordCriteria = passwordCriteria.concat(passwordCriteriaLower);
     };
     if (hasUpper === true) {
-      randomPassword + passwordCriteriaUpper[(Math.floor(Math.random() * Math.floor(passwordCriteriaUpper.length)))];
+      randomPassword = randomPassword + passwordCriteriaUpper[(Math.floor(Math.random() * Math.floor(passwordCriteriaUpper.length)))];
       passwordCriteria = passwordCriteria.concat(passwordCriteriaUpper);
     };
     if (hasNum === true) {
-      randomPassword + passwordCriteriaNum[(Math.floor(Math.random() * Math.floor(passwordCriteriaNum.length)))];
+      randomPassword = randomPassword + passwordCriteriaNum[(Math.floor(Math.random() * Math.floor(passwordCriteriaNum.length)))];
       passwordCriteria = passwordCriteria.concat(passwordCriteriaNum);
     };
     if (hasSpecial === true) {
-      randomPassword + passwordCriteriaSpecial[(Math.floor(Math.random() * Math.floor(passwordCriteriaSpecial.length)))];
+      randomPassword = randomPassword + passwordCriteriaSpecial[(Math.floor(Math.random() * Math.floor(passwordCriteriaSpecial.length)))];
       passwordCriteria = passwordCriteria.concat(passwordCriteriaSpecial);
     };
 
