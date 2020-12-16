@@ -15,10 +15,13 @@ function generatePassword() {
     
   if (isNaN(length)) {
     alert("It is not a number, please enter a password length between 8 and 128");
+    return -1;
   } else if (length < 8) {
     alert("Password length must be at least 8 characters");
+    return -1;
   } else if (length > 128) {
     alert("Password length must mo more than 128 characters");
+    return -1;
   };
 
   var hasLower = confirm("Include Lowercase Character");
@@ -29,7 +32,10 @@ function generatePassword() {
 
   var hasSpecial = confirm("Include Special Character");
 
-    // if ( )
+    if (hasLower === false && hasUpper === false && hasNum === false && hasSpecial === false) {
+      alert ("password must conatin at least one character type");
+      return -1;
+    };
 
   console.log('passwordLength', length);
   console.log('lower', hasLower);
@@ -48,12 +54,17 @@ function generatePassword() {
 
  
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  var password = generatePassword();   
  
-}
+    if (password === -1) {
+      alert ("Does not meet password criteria");
+    } else {
+      var passwordText = document.querySelector("#password");
+
+      passwordText.value = password;
+    }  
+ 
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
